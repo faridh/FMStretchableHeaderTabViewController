@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "JKStretchableHeaderTabViewController"
-  s.version          = "0.1.8"
+  s.version          = "0.1.9"
   s.summary          = "Stretchable header view + Horizontal swipable tab view with support for several tabs."
   s.description      = <<-DESC
                        Stretchable header view + Horizontal swipable tab view
