@@ -1,19 +1,19 @@
 Pod::Spec.new do |s|
-  s.name             = "AXStretchableHeaderTabViewController"
+  s.name             = "JKStretchableHeaderTabViewController"
   s.version          = "0.1.8"
-  s.summary          = "Stretchable header view + Horizontal swipable tab view."
+  s.summary          = "Stretchable header view + Horizontal swipable tab view with support for several tabs."
   s.description      = <<-DESC
                        Stretchable header view + Horizontal swipable tab view
                        - Stretchable header view.
                        - Horizontal swipable tab view.
                        - No header tab view.
                        DESC
-  s.homepage         = "https://github.com/akiroom/AXStretchableHeaderTabViewController"
+  s.homepage         = "https://github.com/jkoroniak/JKStretchableHeaderTabViewController"
   s.screenshots      = "https://raw.githubusercontent.com/akiroom/AXStretchableHeaderTabViewController/master/Screenshots/screenshot-stretchable.gif", "https://raw.githubusercontent.com/akiroom/AXStretchableHeaderTabViewController/master/Screenshots/screenshot-swipable.gif"
   s.license          = 'MIT'
-  s.author           = { "Hiroki Akiyama" => "aki-hiroki@nifty.com" }
-  s.source           = { :git => "https://github.com/akiroom/AXStretchableHeaderTabViewController.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/akiroom'
+  s.author           = { "Joel Koroniak" => "joelkoroniak@mac.com" }
+  s.source           = { :git => "https://github.com/jkoroniak/JKStretchableHeaderTabViewController.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/jkoroniak'
 
   s.platform     = :ios, '7.0'
   s.ios.deployment_target = '7.0'
