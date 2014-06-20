@@ -1,10 +1,10 @@
 //
-//  AXTabBarItemButton.h
+//  JKTabBarItemButton.h
 //  Pods
 //
 
 #import <UIKit/UIKit.h>
 
-@interface AXTabBarItemButton : UIButton
+@interface JKTabBarItemButton : UIButton
 @property (copy, nonatomic) NSString *badgeValue;
 @end

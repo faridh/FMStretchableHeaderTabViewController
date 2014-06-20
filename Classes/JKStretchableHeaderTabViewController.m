@@ -1,15 +1,15 @@
 //
-//  AXStretchableHeaderTabViewController.m
+//  JKStretchableHeaderTabViewController.m
 //  Pods
 //
 
-#import "AXStretchableHeaderTabViewController.h"
+#import "JKStretchableHeaderTabViewController.h"
 
-@interface AXStretchableHeaderTabViewController ()
+@interface JKStretchableHeaderTabViewController ()
 
 @end
 
-@implementation AXStretchableHeaderTabViewController {
+@implementation JKStretchableHeaderTabViewController {
   CGFloat _headerViewTopConstraintConstant;
 }
 
@@ -17,13 +17,13 @@
 {
   // MEMO:
   // An inherited class does not load xib file.
-  // So, this code assigns class name of AXStretchableHeaderTabViewController clearly.
-  self = [super initWithNibName:NSStringFromClass([AXStretchableHeaderTabViewController class]) bundle:nibBundleOrNil];
+  // So, this code assigns class name of JKStretchableHeaderTabViewController clearly.
+  self = [super initWithNibName:NSStringFromClass([JKStretchableHeaderTabViewController class]) bundle:nibBundleOrNil];
   if (self) {
     // Custom initialization
     _shouldBounceHeaderView = YES;
 
-    _tabBar = [[AXTabBar alloc] init];
+    _tabBar = [[JKTabBar alloc] init];
     [_tabBar setDelegate:self];
   }
   return self;
@@ -67,7 +67,7 @@
 
 #pragma mark - Property
 
-- (UIViewController *)selectedViewController
+- (JKTabViewController *)selectedViewController
 {
   return _viewControllers[_selectedIndex];
 }
@@ -83,7 +83,7 @@
   }
 }
 
-- (void)setHeaderView:(AXStretchableHeaderView *)headerView
+- (void)setHeaderView:(JKStretchableHeaderView *)headerView
 {
   if (_headerView != headerView) {
     [_headerView removeFromSuperview];
@@ -132,7 +132,14 @@
 - (void)layoutHeaderViewAndTabBar
 {
   // Get selected scroll view.
-  UIScrollView *scrollView = (id)[self selectedViewController].view;
+    
+    UIScrollView *scrollView;
+    
+    if ([[self selectedViewController] respondsToSelector:@selector(scrollableComponentView)]) {
+        scrollView = [[self selectedViewController] scrollableComponentView];
+    } else {
+        scrollView = (id)[self selectedViewController].view;
+    }
   
   if ([scrollView isKindOfClass:[UIScrollView class]]) {
     // Set header view frame
@@ -340,7 +347,7 @@
 
 #pragma mark - Tab bar delegate
 
-- (BOOL)tabBar:(AXTabBar *)tabBar shouldSelectItem:(UITabBarItem *)item
+- (BOOL)tabBar:(JKTabBar *)tabBar shouldSelectItem:(UITabBarItem *)item
 {
   [self layoutSubViewControllerToSelectedViewController];
   return YES;

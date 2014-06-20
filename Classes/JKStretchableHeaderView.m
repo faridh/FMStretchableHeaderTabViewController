@@ -1,17 +1,17 @@
 //
-//  AXStretchableHeaderView.m
+//  JKStretchableHeaderView.m
 //  Pods
 //
 
-#import "AXStretchableHeaderView.h"
+#import "JKStretchableHeaderView.h"
 
-@implementation AXStretchableHeaderView
+@implementation JKStretchableHeaderView
 
 - (id)initWithFrame:(CGRect)frame
 {
   self = [super initWithFrame:frame];
   if (self) {
-    [self configureAXStretchableHeaderView];
+    [self configureJKStretchableHeaderView];
   }
   return self;
 }
@@ -19,7 +19,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
   if (self = [super initWithCoder:aDecoder]) {
-    [self configureAXStretchableHeaderView];
+    [self configureJKStretchableHeaderView];
   }
   return self;
 }
@@ -30,7 +30,7 @@
   
 }
 
-- (void)configureAXStretchableHeaderView
+- (void)configureJKStretchableHeaderView
 {
   self.clipsToBounds = YES;
   _bounces = YES;

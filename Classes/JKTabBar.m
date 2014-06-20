@@ -1,22 +1,22 @@
 //
-//  AXTabBar.m
+//  JKTabBar.m
 //  Pods
 //
 
-#import "AXTabBar.h"
-#import "AXTabBarItemButton.h"
+#import "JKTabBar.h"
+#import "JKTabBarItemButton.h"
 
-@interface AXTabBar ()
+@interface JKTabBar ()
 @property (readonly, nonatomic) UIScrollView *containerView;
 @property (readonly, nonatomic) UIToolbar *toolbar;
 @property (copy, nonatomic) NSArray *tabBarItemButtons;
 @end
 
-@implementation AXTabBar {
+@implementation JKTabBar {
   NSArray *_items;
   CALayer *_bottomSeparator;
   CALayer *_indicatorLayer;
-  AXTabBarStyle _tabBarStyle;
+  JKTabBarStyle _tabBarStyle;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -54,14 +54,14 @@
   if (_tabBarItemButtons.count > 0) {
     CGSize buttonSize = (CGSize){CGRectGetWidth(self.bounds) / _tabBarItemButtons.count, CGRectGetHeight(self.bounds)};
     switch (_tabBarStyle) {
-      case AXTabBarStyleDefault: {
+      case JKTabBarStyleDefault: {
         [_tabBarItemButtons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
           [button setFrame:(CGRect){buttonSize.width * idx, 0.0, buttonSize}];
         }];
         [_containerView setContentSize:CGSizeZero];
         break;
       }
-      case AXTabBarStyleVariableWidthButton: {
+      case JKTabBarStyleVariableWidthButton: {
         __block CGFloat x = 8.0;
         [_tabBarItemButtons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
           [button sizeToFit];
@@ -99,7 +99,7 @@
     [items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
       if ([obj isKindOfClass:[UITabBarItem class]]) {
         UITabBarItem *item = obj;
-        AXTabBarItemButton *button = [[AXTabBarItemButton alloc] init];
+        JKTabBarItemButton *button = [[JKTabBarItemButton alloc] init];
         [button.titleLabel setFont:_tabBarButtonFont];
         [button setImage:item.image forState:UIControlStateNormal];
         [button setTitle:item.title forState:UIControlStateNormal];
@@ -129,7 +129,7 @@
       [_tabBarItemButtons[beforeIndex] setSelected:NO];
     }
     if (afterIndex != NSNotFound) {
-      AXTabBarItemButton *button = _tabBarItemButtons[afterIndex];
+      JKTabBarItemButton *button = _tabBarItemButtons[afterIndex];
       _selectedItem = selectedItem;
       [button setSelected:YES];
       
@@ -155,7 +155,7 @@
   [CATransaction commit];
 }
 
-- (void)setTabBarStyle:(AXTabBarStyle)tabBarStyle
+- (void)setTabBarStyle:(JKTabBarStyle)tabBarStyle
 {
   if (_tabBarStyle != tabBarStyle) {
     _tabBarStyle = tabBarStyle;
