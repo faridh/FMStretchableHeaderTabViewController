@@ -1,10 +1,10 @@
-# AXStretchableHeaderTabViewController
+# JKStretchableHeaderTabViewController
 
 [![Version](https://img.shields.io/cocoapods/v/AXStretchableHeaderTabViewController.svg?style=flat)](http://cocoadocs.org/docsets/AXStretchableHeaderTabViewController)
 [![License](https://img.shields.io/cocoapods/l/AXStretchableHeaderTabViewController.svg?style=flat)](http://cocoadocs.org/docsets/AXStretchableHeaderTabViewController)
 [![Platform](https://img.shields.io/cocoapods/p/AXStretchableHeaderTabViewController.svg?style=flat)](http://cocoadocs.org/docsets/AXStretchableHeaderTabViewController)
 
-Stretchable header view + Horizontal swipable tab view
+A fork of AXStretchableTabViewController which aims to provide support for 3+ tabs, a tab bar offset, tab bar icons, and a tab bar selection indicator in addition to minor improvments here and there.
 
 ## Usage
 
@@ -29,7 +29,8 @@ it, simply add the following line to your Podfile:
 
 ## Author
 
-Hiroki Akiyama, aki-hiroki@nifty.com
+Forked by: Joel Koroniak
+Original by: Hiroki Akiyama, aki-hiroki@nifty.com
 
 ## License
 
