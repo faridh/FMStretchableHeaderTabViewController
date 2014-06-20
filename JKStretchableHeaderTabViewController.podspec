@@ -25,3 +25,4 @@ Pod::Spec.new do |s|
   s.ios.exclude_files = 'Classes/osx'
   s.frameworks = 'UIKit', 'CoreGraphics'
 end
+
