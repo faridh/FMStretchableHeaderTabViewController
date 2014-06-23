@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class JKTabBarItemButton;
+
 /** An abstract view controller designed to be subclassed and used as a tab within an instance of a JKStretchableHeaderTabViewController */
 @interface JKTabViewController : UIViewController
 
@@ -18,4 +20,5 @@
  */
 - (UIScrollView*) scrollableComponentView;
 
+@property (nonatomic, strong) JKTabBarItemButton *tabBarButton;
 @end

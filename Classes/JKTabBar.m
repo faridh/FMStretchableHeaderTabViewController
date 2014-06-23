@@ -113,6 +113,13 @@
         [button setTitleColor:self.tintColor forState:UIControlStateHighlighted];
         [_containerView addSubview:button];
         [buttons addObject:button];
+      } else if ([obj isKindOfClass:[JKTabBarItemButton class]]) {
+          JKTabBarItemButton *button = (JKTabBarItemButton*)obj;
+          [button addTarget:self action:@selector(touchesButton:) forControlEvents:UIControlEventTouchDown];
+          [button setTitleColor:self.tintColor forState:UIControlStateSelected];
+          [button setTitleColor:self.tintColor forState:UIControlStateHighlighted];
+          [_containerView addSubview:button];
+          [buttons addObject:button];
       }
     }];
     [_indicatorLayer setBackgroundColor:[self.tintColor CGColor]];

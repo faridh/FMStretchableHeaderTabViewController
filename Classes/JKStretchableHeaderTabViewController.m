@@ -115,7 +115,14 @@
       [_containerView addSubview:viewController.view];
       [viewController.view addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
       [self addChildViewController:viewController];
-      [tabItems addObject:viewController.tabBarItem];
+        
+        // If we are using a JKTabViewController, than we want to use the custom bar button item to create the tab view, in case it has been customized
+        if ([viewController isKindOfClass:[JKTabViewController class]]) {
+            JKTabViewController *tabViewController = (JKTabViewController*)viewController;
+            [tabItems addObject:tabViewController.tabBarButton];
+        } else {
+            [tabItems addObject:viewController.tabBarItem];
+        }
     }];
     [_tabBar setItems:tabItems];
     
