@@ -27,8 +27,11 @@
     AXSub1TableViewController *sub1ViewCon = [[AXSub1TableViewController alloc] init];
     AXSub2TableViewController *sub2ViewCon = [[AXSub2TableViewController alloc] init];
     AXSub3ViewController *sub3ViewCon = [[AXSub3ViewController alloc] init];
+      AXSub1TableViewController *sub4ViewCon = [[AXSub1TableViewController alloc] init];
+      AXSub1TableViewController *sub5ViewCon = [[AXSub1TableViewController alloc] init];
+      AXSub1TableViewController *sub6ViewCon = [[AXSub1TableViewController alloc] init];
     
-    NSArray *viewControllers = @[sub1ViewCon, sub2ViewCon, sub3ViewCon];
+    NSArray *viewControllers = @[sub1ViewCon, sub2ViewCon, sub3ViewCon, sub4ViewCon, sub5ViewCon, sub6ViewCon];
     self.viewControllers = viewControllers;
   }
   return self;

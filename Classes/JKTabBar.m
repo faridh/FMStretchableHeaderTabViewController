@@ -6,6 +6,8 @@
 #import "JKTabBar.h"
 #import "JKTabBarItemButton.h"
 
+#define MIN_TAB_BUTTON_WIDTH 100
+
 @interface JKTabBar ()
 @property (readonly, nonatomic) UIScrollView *containerView;
 @property (readonly, nonatomic) UIToolbar *toolbar;
@@ -33,14 +35,16 @@
     _containerView.bounces = NO;
     _containerView.showsHorizontalScrollIndicator = NO;
     _containerView.decelerationRate = UIScrollViewDecelerationRateFast;
+      _containerView.scrollEnabled = NO;
+      _containerView.contentInset = UIEdgeInsetsMake(0, 50, 0, [UIScreen mainScreen].bounds.size.width - 150);
     [self addSubview:_containerView];
     
     _bottomSeparator = [CALayer layer];
-    [_bottomSeparator setBackgroundColor:[[UIColor colorWithWhite:0.0 alpha:0.1] CGColor]];
+    [_bottomSeparator setBackgroundColor:[[UIColor orangeColor] CGColor]];
     [self.layer addSublayer:_bottomSeparator];
 
     _indicatorLayer = [CALayer layer];
-    [self.layer addSublayer:_indicatorLayer];
+    [_containerView.layer addSublayer:_indicatorLayer];
   }
   return self;
 }
@@ -50,15 +54,15 @@
   [super layoutSubviews];
   [_toolbar setFrame:self.bounds];
   [_containerView setFrame:self.bounds];
-  
+   
   if (_tabBarItemButtons.count > 0) {
-    CGSize buttonSize = (CGSize){CGRectGetWidth(self.bounds) / _tabBarItemButtons.count, CGRectGetHeight(self.bounds)};
+    CGSize buttonSize = (CGSize){MAX( MIN_TAB_BUTTON_WIDTH, CGRectGetWidth(self.bounds)/ _tabBarItemButtons.count), CGRectGetHeight(self.bounds)};
     switch (_tabBarStyle) {
       case JKTabBarStyleDefault: {
         [_tabBarItemButtons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
           [button setFrame:(CGRect){buttonSize.width * idx, 0.0, buttonSize}];
         }];
-        [_containerView setContentSize:CGSizeZero];
+        [_containerView setContentSize:CGSizeMake(buttonSize.width * _tabBarItemButtons.count, buttonSize.height)];
         break;
       }
       case JKTabBarStyleVariableWidthButton: {
@@ -112,6 +116,7 @@
       }
     }];
     [_indicatorLayer setBackgroundColor:[self.tintColor CGColor]];
+    [_bottomSeparator setBackgroundColor:[self.tintColor CGColor]];
     [self setNeedsLayout];
     self.tabBarItemButtons = [buttons copy];
     
@@ -134,6 +139,7 @@
       [button setSelected:YES];
       
       [self layoutIndicatorLayerWithButton:button];
+        [_containerView setContentOffset:CGPointMake(button.frame.origin.x - 50, button.frame.origin.y) animated:YES];
     }
   }
 }

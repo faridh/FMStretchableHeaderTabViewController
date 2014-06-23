@@ -7,7 +7,7 @@
 
 typedef enum : NSUInteger {
   JKTabBarStyleDefault = 0,
-  JKTabBarStyleVariableWidthButton,
+  JKTabBarStyleVariableWidthButton
 } JKTabBarStyle;
 
 @class JKTabBar;
