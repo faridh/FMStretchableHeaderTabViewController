@@ -1,22 +1,24 @@
 //
-//  AXTabBar.m
+//  JKTabBar.m
 //  Pods
 //
 
-#import "AXTabBar.h"
-#import "AXTabBarItemButton.h"
+#import "JKTabBar.h"
+#import "JKTabBarItemButton.h"
 
-@interface AXTabBar ()
+#define MIN_TAB_BUTTON_WIDTH 100
+
+@interface JKTabBar ()
 @property (readonly, nonatomic) UIScrollView *containerView;
 @property (readonly, nonatomic) UIToolbar *toolbar;
 @property (copy, nonatomic) NSArray *tabBarItemButtons;
 @end
 
-@implementation AXTabBar {
+@implementation JKTabBar {
   NSArray *_items;
   CALayer *_bottomSeparator;
   CALayer *_indicatorLayer;
-  AXTabBarStyle _tabBarStyle;
+  JKTabBarStyle _tabBarStyle;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -33,14 +35,16 @@
     _containerView.bounces = NO;
     _containerView.showsHorizontalScrollIndicator = NO;
     _containerView.decelerationRate = UIScrollViewDecelerationRateFast;
+      _containerView.scrollEnabled = NO;
+      _containerView.contentInset = UIEdgeInsetsMake(0, 50, 0, [UIScreen mainScreen].bounds.size.width - 150);
     [self addSubview:_containerView];
     
     _bottomSeparator = [CALayer layer];
-    [_bottomSeparator setBackgroundColor:[[UIColor colorWithWhite:0.0 alpha:0.1] CGColor]];
+    [_bottomSeparator setBackgroundColor:[[UIColor orangeColor] CGColor]];
     [self.layer addSublayer:_bottomSeparator];
 
     _indicatorLayer = [CALayer layer];
-    [self.layer addSublayer:_indicatorLayer];
+    [_containerView.layer addSublayer:_indicatorLayer];
   }
   return self;
 }
@@ -50,18 +54,18 @@
   [super layoutSubviews];
   [_toolbar setFrame:self.bounds];
   [_containerView setFrame:self.bounds];
-  
+   
   if (_tabBarItemButtons.count > 0) {
-    CGSize buttonSize = (CGSize){CGRectGetWidth(self.bounds) / _tabBarItemButtons.count, CGRectGetHeight(self.bounds)};
+    CGSize buttonSize = (CGSize){MAX( MIN_TAB_BUTTON_WIDTH, CGRectGetWidth(self.bounds)/ _tabBarItemButtons.count), CGRectGetHeight(self.bounds)};
     switch (_tabBarStyle) {
-      case AXTabBarStyleDefault: {
+      case JKTabBarStyleDefault: {
         [_tabBarItemButtons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
           [button setFrame:(CGRect){buttonSize.width * idx, 0.0, buttonSize}];
         }];
-        [_containerView setContentSize:CGSizeZero];
+        [_containerView setContentSize:CGSizeMake(buttonSize.width * _tabBarItemButtons.count, buttonSize.height)];
         break;
       }
-      case AXTabBarStyleVariableWidthButton: {
+      case JKTabBarStyleVariableWidthButton: {
         __block CGFloat x = 8.0;
         [_tabBarItemButtons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
           [button sizeToFit];
@@ -99,7 +103,7 @@
     [items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
       if ([obj isKindOfClass:[UITabBarItem class]]) {
         UITabBarItem *item = obj;
-        AXTabBarItemButton *button = [[AXTabBarItemButton alloc] init];
+        JKTabBarItemButton *button = [[JKTabBarItemButton alloc] init];
         [button.titleLabel setFont:_tabBarButtonFont];
         [button setImage:item.image forState:UIControlStateNormal];
         [button setTitle:item.title forState:UIControlStateNormal];
@@ -109,9 +113,17 @@
         [button setTitleColor:self.tintColor forState:UIControlStateHighlighted];
         [_containerView addSubview:button];
         [buttons addObject:button];
+      } else if ([obj isKindOfClass:[JKTabBarItemButton class]]) {
+          JKTabBarItemButton *button = (JKTabBarItemButton*)obj;
+          [button addTarget:self action:@selector(touchesButton:) forControlEvents:UIControlEventTouchDown];
+          [button setTitleColor:self.tintColor forState:UIControlStateSelected];
+          [button setTitleColor:self.tintColor forState:UIControlStateHighlighted];
+          [_containerView addSubview:button];
+          [buttons addObject:button];
       }
     }];
     [_indicatorLayer setBackgroundColor:[self.tintColor CGColor]];
+    [_bottomSeparator setBackgroundColor:[self.tintColor CGColor]];
     [self setNeedsLayout];
     self.tabBarItemButtons = [buttons copy];
     
@@ -129,11 +141,12 @@
       [_tabBarItemButtons[beforeIndex] setSelected:NO];
     }
     if (afterIndex != NSNotFound) {
-      AXTabBarItemButton *button = _tabBarItemButtons[afterIndex];
+      JKTabBarItemButton *button = _tabBarItemButtons[afterIndex];
       _selectedItem = selectedItem;
       [button setSelected:YES];
       
       [self layoutIndicatorLayerWithButton:button];
+        [_containerView setContentOffset:CGPointMake(button.frame.origin.x - 50, button.frame.origin.y) animated:YES];
     }
   }
 }
@@ -155,7 +168,7 @@
   [CATransaction commit];
 }
 
-- (void)setTabBarStyle:(AXTabBarStyle)tabBarStyle
+- (void)setTabBarStyle:(JKTabBarStyle)tabBarStyle
 {
   if (_tabBarStyle != tabBarStyle) {
     _tabBarStyle = tabBarStyle;

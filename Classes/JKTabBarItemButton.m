@@ -1,11 +1,11 @@
 //
-//  AXTabBarItemButton.m
+//  JKTabBarItemButton.m
 //  Pods
 //
 
-#import "AXTabBarItemButton.h"
+#import "JKTabBarItemButton.h"
 
-@implementation AXTabBarItemButton
+@implementation JKTabBarItemButton
 
 - (id)initWithFrame:(CGRect)frame
 {
