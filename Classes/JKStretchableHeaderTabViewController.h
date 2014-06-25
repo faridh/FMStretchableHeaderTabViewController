@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *containerView;
 @property (nonatomic) BOOL shouldBounceHeaderView;
 
+- (void) selectTabViewControllerAtIndex: (NSInteger) index;
+
 // Layout
 - (void)layoutHeaderViewAndTabBar;
 - (void)layoutViewControllers;

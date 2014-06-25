@@ -51,6 +51,14 @@
   [headerView.backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     
     self.tabBar.barItemButtonSeparatorColor = [UIColor lightGrayColor];
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self selectTabViewControllerAtIndex:2];
 }
 
 - (void)didReceiveMemoryWarning

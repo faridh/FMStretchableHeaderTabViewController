@@ -137,7 +137,12 @@
     [self setNeedsLayout];
     self.tabBarItemButtons = [buttons copy];
     
-    [self setSelectedItem:[items firstObject]];
+      if (_selectedItem) {
+          [self setSelectedItem:[items objectAtIndex:[_items indexOfObject:_selectedItem]]];
+      } else {
+          [self setSelectedItem:[items firstObject]];
+      }
+    
   }
 }
 
@@ -180,8 +185,8 @@
     width, 2.0
   }];
   [_indicatorLayer setFrame:(CGRect){
-    CGRectGetMinX(button.frame) + 10.0, height - 4.0,
-    CGRectGetWidth(button.frame) - 20.0, 4.0
+    CGRectGetMinX(button.frame) + 10.0, height - 3.0,
+    CGRectGetWidth(button.frame) - 20.0, 3.0
   }];
   [CATransaction commit];
 }
