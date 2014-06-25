@@ -268,6 +268,17 @@
   }];
 }
 
+- (void) selectTabViewControllerAtIndex: (NSInteger) index
+{
+    _selectedIndex = index;
+    
+    // Update View
+    [_containerView setContentOffset:(CGPoint){_selectedIndex * CGRectGetWidth(_containerView.bounds), _containerView.contentOffset.y} animated:YES];
+    
+    // Update Tab Bar
+    [_tabBar setSelectedItem:_tabBar.items[_selectedIndex]];
+}
+
 #pragma mark - KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
