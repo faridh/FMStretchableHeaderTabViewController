@@ -6,7 +6,7 @@
 #import "JKTabBar.h"
 #import "JKTabBarItemButton.h"
 
-#define MIN_TAB_BUTTON_WIDTH 100
+#define MIN_TAB_BUTTON_WIDTH 140
 
 @interface JKTabBar ()
 @property (readonly, nonatomic) UIScrollView *containerView;
@@ -36,7 +36,7 @@
     _containerView.showsHorizontalScrollIndicator = NO;
     _containerView.decelerationRate = UIScrollViewDecelerationRateFast;
       _containerView.scrollEnabled = NO;
-      _containerView.contentInset = UIEdgeInsetsMake(0, 50, 0, [UIScreen mainScreen].bounds.size.width - 150);
+      //_containerView.contentInset = UIEdgeInsetsMake(0, 50, 0, [UIScreen mainScreen].bounds.size.width - 150);
     [self addSubview:_containerView];
     
     _bottomSeparator = [CALayer layer];
@@ -61,6 +61,11 @@
       case JKTabBarStyleDefault: {
         [_tabBarItemButtons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
           [button setFrame:(CGRect){buttonSize.width * idx, 0.0, buttonSize}];
+            [(JKTabBarItemButton*)button setSeparatorColor:self.barItemButtonSeparatorColor];
+            [(JKTabBarItemButton*)button setShowsRightSideSeparator:NO];
+            if (idx == 0) {
+                [(JKTabBarItemButton*)button setShowsLeftSideSeparator:NO];
+            }
         }];
         [_containerView setContentSize:CGSizeMake(buttonSize.width * _tabBarItemButtons.count, buttonSize.height)];
         break;
@@ -72,6 +77,11 @@
           CGFloat buttonWidth = CGRectGetWidth(button.bounds);
           [button setFrame:(CGRect){x, 0.0, buttonWidth, buttonSize.height}];
           x += buttonWidth;
+            [(JKTabBarItemButton*)button setSeparatorColor:self.barItemButtonSeparatorColor];
+            [(JKTabBarItemButton*)button setShowsRightSideSeparator:NO];
+            if (idx == 0) {
+                [(JKTabBarItemButton*)button setShowsLeftSideSeparator:NO];
+            }
         }];
         [_containerView setContentSize:(CGSize){x, 0.0}];
         break;
@@ -146,7 +156,15 @@
       [button setSelected:YES];
       
       [self layoutIndicatorLayerWithButton:button];
-        [_containerView setContentOffset:CGPointMake(button.frame.origin.x - 50, button.frame.origin.y) animated:YES];
+        CGPoint newContentOffset = CGPointMake(button.frame.origin.x - 50, button.frame.origin.y);
+        
+        if (newContentOffset.x < 0) {
+            newContentOffset.x = 0;
+        } else if (newContentOffset.x > (_containerView.contentSize.width - _containerView.frame.size.width)) {
+            newContentOffset.x = _containerView.contentSize.width - _containerView.frame.size.width;
+        }
+        
+        [_containerView setContentOffset:newContentOffset animated:YES];
     }
   }
 }
@@ -158,12 +176,12 @@
   CGFloat width = CGRectGetWidth(self.bounds);
   CGFloat height = CGRectGetHeight(self.bounds);
   [_bottomSeparator setFrame:(CGRect){
-    0.0, height - 1.0,
-    width, 1.0
+    0.0, height - 2.0,
+    width, 2.0
   }];
   [_indicatorLayer setFrame:(CGRect){
-    CGRectGetMinX(button.frame), height - 2.0,
-    CGRectGetWidth(button.frame), 2.0
+    CGRectGetMinX(button.frame) + 10.0, height - 4.0,
+    CGRectGetWidth(button.frame) - 20.0, 4.0
   }];
   [CATransaction commit];
 }
@@ -174,6 +192,16 @@
     _tabBarStyle = tabBarStyle;
     [self setNeedsLayout];
   }
+}
+
+- (void) setBarItemButtonSeparatorColor:(UIColor *)barItemButtonSeparatorColor
+{
+    if ([_barItemButtonSeparatorColor isEqual:barItemButtonSeparatorColor]) {
+        return;
+    }
+    
+    _barItemButtonSeparatorColor = barItemButtonSeparatorColor;
+    [self setNeedsLayout];
 }
 
 #pragma mark - Action

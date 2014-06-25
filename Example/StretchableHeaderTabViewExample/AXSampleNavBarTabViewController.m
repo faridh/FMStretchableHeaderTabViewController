@@ -49,6 +49,8 @@
   headerView.imageView.image = [UIImage imageNamed:@"sample-photo.jpg"];
   [headerView.backButton setTitle:@"back" forState:UIControlStateNormal];
   [headerView.backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.tabBar.barItemButtonSeparatorColor = [UIColor lightGrayColor];
 }
 
 - (void)didReceiveMemoryWarning

@@ -23,6 +23,7 @@ typedef enum : NSUInteger {
 @property (assign, nonatomic) UITabBarItem *selectedItem;
 @property (assign, nonatomic) id<JKTabBarDelegate> delegate;
 @property (strong, nonatomic) UIFont *tabBarButtonFont;
+@property (nonatomic, strong) UIColor *barItemButtonSeparatorColor;
 
 // TODO: implement this style option.
 //@property (nonatomic) JKTabBarStyle tabBarStyle;
