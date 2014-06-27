@@ -7,6 +7,8 @@
 
 @interface JKStretchableHeaderTabViewController ()
 
+- (void) informDelegateOfNewTabControllerSelection: (UIViewController*) tabController;
+
 @end
 
 @implementation JKStretchableHeaderTabViewController {
@@ -65,6 +67,15 @@
   // Dispose of any resources that can be recreated.
 }
 
+- (void) informDelegateOfNewTabControllerSelection: (UIViewController*) tabController
+{
+    if (self.delegate) {
+        if ([self.delegate respondsToSelector:@selector(stretchableHeaderTabViewController:willShowTabController:)]) {
+            [self.delegate stretchableHeaderTabViewController:self willShowTabController:tabController];
+        }
+    }
+}
+
 #pragma mark - Property
 
 - (JKTabViewController *)selectedViewController
@@ -79,7 +90,7 @@
     return;
   }
   if (newIndex != _selectedIndex) {
-    _selectedIndex = newIndex;
+    self.selectedIndex = newIndex;
   }
 }
 
@@ -130,8 +141,19 @@
     
     // tab bar
     [_tabBar setSelectedItem:[_tabBar.items firstObject]];
-    _selectedIndex = 0;
+    self.selectedIndex = 0;
   }
+}
+
+- (void) setSelectedIndex:(NSUInteger)selectedIndex
+{
+    if (selectedIndex == NSNotFound) {
+        return;
+    }
+    if (selectedIndex != _selectedIndex) {
+        _selectedIndex = selectedIndex;
+        [self informDelegateOfNewTabControllerSelection:[self.viewControllers objectAtIndex:_selectedIndex]];
+    }
 }
 
 #pragma mark - Layout
@@ -270,7 +292,7 @@
 
 - (void) selectTabViewControllerAtIndex: (NSInteger) index
 {
-    _selectedIndex = index;
+    self.selectedIndex = index;
     
     // Update View
     [_containerView setContentOffset:(CGPoint){_selectedIndex * CGRectGetWidth(_containerView.bounds), _containerView.contentOffset.y} animated:YES];
@@ -357,8 +379,8 @@
 {
   if (scrollView.isDragging) {
     NSUInteger numberOfViewControllers = _viewControllers.count;
-    _selectedIndex = round(scrollView.contentOffset.x / scrollView.contentSize.width * numberOfViewControllers);
-    _selectedIndex = MIN(numberOfViewControllers - 1, MAX(0, _selectedIndex));
+    self.selectedIndex = round(scrollView.contentOffset.x / scrollView.contentSize.width * numberOfViewControllers);
+    self.selectedIndex = MIN(numberOfViewControllers - 1, MAX(0, _selectedIndex));
     [_tabBar setSelectedItem:_tabBar.items[_selectedIndex]];
   }
 }
@@ -373,7 +395,7 @@
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
-  _selectedIndex = [[tabBar items] indexOfObject:item];
+  self.selectedIndex = [[tabBar items] indexOfObject:item];
   [_containerView setContentOffset:(CGPoint){_selectedIndex * CGRectGetWidth(_containerView.bounds), _containerView.contentOffset.y} animated:YES];
 }
 

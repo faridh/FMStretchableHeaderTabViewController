@@ -8,6 +8,15 @@
 #import "JKTabBar.h"
 #import "JKTabViewController.h"
 
+@class JKStretchableHeaderTabViewController;
+
+@protocol JKStretchableHeaderTabViewControllerDelegate <NSObject>
+
+@optional
+- (void) stretchableHeaderTabViewController: (JKStretchableHeaderTabViewController*) stretchableHeaderTabViewController willShowTabController: (UIViewController*) tabController;
+
+@end
+
 @interface JKStretchableHeaderTabViewController : UIViewController <UIScrollViewDelegate, JKTabBarDelegate>
 @property (nonatomic) NSUInteger selectedIndex;
 @property (readwrite, nonatomic) JKTabViewController *selectedViewController;
@@ -17,6 +26,8 @@
 @property (readonly, nonatomic) JKTabBar *tabBar;
 @property (weak, nonatomic) IBOutlet UIScrollView *containerView;
 @property (nonatomic) BOOL shouldBounceHeaderView;
+
+@property (nonatomic, assign) id <JKStretchableHeaderTabViewControllerDelegate> delegate;
 
 - (void) selectTabViewControllerAtIndex: (NSInteger) index;
 
