@@ -112,17 +112,19 @@
     NSMutableArray *buttons = [NSMutableArray array];
     [items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
       if ([obj isKindOfClass:[UITabBarItem class]]) {
-        UITabBarItem *item = obj;
-        JKTabBarItemButton *button = [[JKTabBarItemButton alloc] init];
-        [button.titleLabel setFont:_tabBarButtonFont];
-        [button setImage:item.image forState:UIControlStateNormal];
-        [button setTitle:item.title forState:UIControlStateNormal];
-        [button setBadgeValue:item.badgeValue];
-        [button addTarget:self action:@selector(touchesButton:) forControlEvents:UIControlEventTouchDown];
-        [button setTitleColor:self.tintColor forState:UIControlStateSelected];
-        [button setTitleColor:self.tintColor forState:UIControlStateHighlighted];
-        [_containerView addSubview:button];
-        [buttons addObject:button];
+          UITabBarItem *item = obj;
+          JKTabBarItemButton *button = [[JKTabBarItemButton alloc] init];
+          [button.titleLabel setFont:_tabBarButtonFont];
+          [button setImage:item.image forState:UIControlStateNormal];
+          [button setTitle:item.title forState:UIControlStateNormal];
+          [button setSelectedImage:item.selectedImage];
+          [button setImage:item.image];
+          [button setBadgeValue:item.badgeValue];
+          [button addTarget:self action:@selector(touchesButton:) forControlEvents:UIControlEventTouchDown];
+          [button setTitleColor:self.tintColor forState:UIControlStateSelected];
+          [button setTitleColor:self.tintColor forState:UIControlStateHighlighted];
+          [_containerView addSubview:button];
+          [buttons addObject:button];
       } else if ([obj isKindOfClass:[JKTabBarItemButton class]]) {
           JKTabBarItemButton *button = (JKTabBarItemButton*)obj;
           [button addTarget:self action:@selector(touchesButton:) forControlEvents:UIControlEventTouchDown];

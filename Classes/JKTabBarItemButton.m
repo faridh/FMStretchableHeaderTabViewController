@@ -74,6 +74,16 @@
     _rightSideSeparator.backgroundColor = _separatorColor.CGColor;
 }
 
+- (void) setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    if (selected) {
+        [self setImage:self.selectedImage forState:UIControlStateNormal];
+    } else {
+        [self setImage:self.image forState:UIControlStateNormal];
+    }
+}
+
 - (void) setShowsLeftSideSeparator:(BOOL)showsLeftSideSeparator
 {
     _showsLeftSideSeparator = showsLeftSideSeparator;
