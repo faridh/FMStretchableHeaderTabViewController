@@ -6,9 +6,9 @@
 // project.
 
 
-// FMStretchableHeaderTabViewController
-#define COCOAPODS_POD_AVAILABLE_FMStretchableHeaderTabViewController
-#define COCOAPODS_VERSION_MAJOR_FMStretchableHeaderTabViewController 0
-#define COCOAPODS_VERSION_MINOR_FMStretchableHeaderTabViewController 1
-#define COCOAPODS_VERSION_PATCH_FMStretchableHeaderTabViewController 9
+// JKStretchableHeaderTabViewController
+#define COCOAPODS_POD_AVAILABLE_JKStretchableHeaderTabViewController
+#define COCOAPODS_VERSION_MAJOR_JKStretchableHeaderTabViewController 0
+#define COCOAPODS_VERSION_MINOR_JKStretchableHeaderTabViewController 1
+#define COCOAPODS_VERSION_PATCH_JKStretchableHeaderTabViewController 9
 

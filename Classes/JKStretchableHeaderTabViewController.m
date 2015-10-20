@@ -1,17 +1,17 @@
 //
-//  FMStretchableHeaderTabViewController.m
+//  JKStretchableHeaderTabViewController.m
 //  Pods
 //
 
-#import "FMStretchableHeaderTabViewController.h"
+#import "JKStretchableHeaderTabViewController.h"
 
-@interface FMStretchableHeaderTabViewController ()
+@interface JKStretchableHeaderTabViewController ()
 
 - (void) informDelegateOfNewTabControllerSelection: (UIViewController*) tabController;
 
 @end
 
-@implementation FMStretchableHeaderTabViewController {
+@implementation JKStretchableHeaderTabViewController {
   CGFloat _headerViewTopConstraintConstant;
 }
 
@@ -19,13 +19,13 @@
 {
   // MEMO:
   // An inherited class does not load xib file.
-  // So, this code assigns class name of FMStretchableHeaderTabViewController clearly.
-  self = [super initWithNibName:NSStringFromClass([FMStretchableHeaderTabViewController class]) bundle:nibBundleOrNil];
+  // So, this code assigns class name of JKStretchableHeaderTabViewController clearly.
+  self = [super initWithNibName:NSStringFromClass([JKStretchableHeaderTabViewController class]) bundle:nibBundleOrNil];
   if (self) {
     // Custom initialization
     _shouldBounceHeaderView = YES;
 
-    _tabBar = [[FMTabBar alloc] init];
+    _tabBar = [[JKTabBar alloc] init];
     [_tabBar setDelegate:self];
   }
   return self;
@@ -83,7 +83,7 @@
 
 #pragma mark - Property
 
-- (FMTabViewController *)selectedViewController
+- (JKTabViewController *)selectedViewController
 {
   return _viewControllers[_selectedIndex];
 }
@@ -99,7 +99,7 @@
   }
 }
 
-- (void)setHeaderView:(FMStretchableHeaderView *)headerView
+- (void)setHeaderView:(JKStretchableHeaderView *)headerView
 {
   if (_headerView != headerView) {
     [_headerView removeFromSuperview];
@@ -132,9 +132,9 @@
       [viewController.view addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
       [self addChildViewController:viewController];
         
-        // If we are using a FMTabViewController, than we want to use the custom bar button item to create the tab view, in case it has been customized
-        if ([viewController isKindOfClass:[FMTabViewController class]]) {
-            FMTabViewController *tabViewController = (FMTabViewController*)viewController;
+        // If we are using a JKTabViewController, than we want to use the custom bar button item to create the tab view, in case it has been customized
+        if ([viewController isKindOfClass:[JKTabViewController class]]) {
+            JKTabViewController *tabViewController = (JKTabViewController*)viewController;
             [tabItems addObject:tabViewController.tabBarButton];
         } else {
             [tabItems addObject:viewController.tabBarItem];
@@ -384,7 +384,7 @@
 
 #pragma mark - Tab bar delegate
 
-- (BOOL)tabBar:(FMTabBar *)tabBar shouldSelectItem:(UITabBarItem *)item
+- (BOOL)tabBar:(JKTabBar *)tabBar shouldSelectItem:(UITabBarItem *)item
 {
   [self layoutSubViewControllerToSelectedViewController];
   return YES;

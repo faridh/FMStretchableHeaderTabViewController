@@ -1,17 +1,17 @@
 //
-//  FMStretchableHeaderView.m
+//  JKStretchableHeaderView.m
 //  Pods
 //
 
-#import "FMStretchableHeaderView.h"
+#import "JKStretchableHeaderView.h"
 
-@implementation FMStretchableHeaderView
+@implementation JKStretchableHeaderView
 
 - (id)initWithFrame:(CGRect)frame
 {
   self = [super initWithFrame:frame];
   if (self) {
-    [self configureFMStretchableHeaderView];
+    [self configureJKStretchableHeaderView];
   }
   return self;
 }
@@ -19,7 +19,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
   if (self = [super initWithCoder:aDecoder]) {
-    [self configureFMStretchableHeaderView];
+    [self configureJKStretchableHeaderView];
   }
   return self;
 }
@@ -30,7 +30,7 @@
   
 }
 
-- (void)configureFMStretchableHeaderView
+- (void)configureJKStretchableHeaderView
 {
   self.clipsToBounds = YES;
   _bounces = YES;

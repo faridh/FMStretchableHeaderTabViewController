@@ -3,8 +3,8 @@
 //  StretchableHeaderTabViewExample
 //
 
-#import "FMStretchableHeaderTabViewController.h"
+#import "JKStretchableHeaderTabViewController.h"
 
-@interface AXSampleNoHeaderTabViewController : FMStretchableHeaderTabViewController
+@interface AXSampleNoHeaderTabViewController : JKStretchableHeaderTabViewController
 
 @end

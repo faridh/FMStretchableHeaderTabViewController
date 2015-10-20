@@ -1,11 +1,11 @@
 //
-//  FMTabBarItemButton.h
+//  JKTabBarItemButton.h
 //  Pods
 //
 
 #import <UIKit/UIKit.h>
 
-@interface FMTabBarItemButton : UIButton
+@interface JKTabBarItemButton : UIButton
 @property (copy, nonatomic) NSString *badgeValue;
 @property (nonatomic, copy) UIColor *separatorColor;
 @property (nonatomic, strong) UIImage *selectedImage;
