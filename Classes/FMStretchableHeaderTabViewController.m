@@ -1,17 +1,17 @@
 //
-//  JKStretchableHeaderTabViewController.m
+//  FMStretchableHeaderTabViewController.m
 //  Pods
 //
 
-#import "JKStretchableHeaderTabViewController.h"
+#import "FMStretchableHeaderTabViewController.h"
 
-@interface JKStretchableHeaderTabViewController ()
+@interface FMStretchableHeaderTabViewController ()
 
 - (void) informDelegateOfNewTabControllerSelection: (UIViewController*) tabController;
 
 @end
 
-@implementation JKStretchableHeaderTabViewController {
+@implementation FMStretchableHeaderTabViewController {
   CGFloat _headerViewTopConstraintConstant;
 }
 
@@ -19,13 +19,13 @@
 {
   // MEMO:
   // An inherited class does not load xib file.
-  // So, this code assigns class name of JKStretchableHeaderTabViewController clearly.
-  self = [super initWithNibName:NSStringFromClass([JKStretchableHeaderTabViewController class]) bundle:nibBundleOrNil];
+  // So, this code assigns class name of FMStretchableHeaderTabViewController clearly.
+  self = [super initWithNibName:NSStringFromClass([FMStretchableHeaderTabViewController class]) bundle:nibBundleOrNil];
   if (self) {
     // Custom initialization
     _shouldBounceHeaderView = YES;
 
-    _tabBar = [[JKTabBar alloc] init];
+    _tabBar = [[FMTabBar alloc] init];
     [_tabBar setDelegate:self];
   }
   return self;
@@ -33,10 +33,15 @@
 
 - (void)viewDidLoad
 {
-  [super viewDidLoad];
-  
-  [_tabBar sizeToFit];
-  [self.view addSubview:_tabBar];
+    [super viewDidLoad];
+    [_tabBar sizeToFit];
+    self.view.clipsToBounds = NO;
+    self.view.backgroundColor = [UIColor clearColor];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.view addSubview:_tabBar];
 }
 
 - (void)dealloc
@@ -78,7 +83,7 @@
 
 #pragma mark - Property
 
-- (JKTabViewController *)selectedViewController
+- (FMTabViewController *)selectedViewController
 {
   return _viewControllers[_selectedIndex];
 }
@@ -94,7 +99,7 @@
   }
 }
 
-- (void)setHeaderView:(JKStretchableHeaderView *)headerView
+- (void)setHeaderView:(FMStretchableHeaderView *)headerView
 {
   if (_headerView != headerView) {
     [_headerView removeFromSuperview];
@@ -127,9 +132,9 @@
       [viewController.view addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
       [self addChildViewController:viewController];
         
-        // If we are using a JKTabViewController, than we want to use the custom bar button item to create the tab view, in case it has been customized
-        if ([viewController isKindOfClass:[JKTabViewController class]]) {
-            JKTabViewController *tabViewController = (JKTabViewController*)viewController;
+        // If we are using a FMTabViewController, than we want to use the custom bar button item to create the tab view, in case it has been customized
+        if ([viewController isKindOfClass:[FMTabViewController class]]) {
+            FMTabViewController *tabViewController = (FMTabViewController*)viewController;
             [tabItems addObject:tabViewController.tabBarButton];
         } else {
             [tabItems addObject:viewController.tabBarItem];
@@ -194,11 +199,7 @@
   }
   
   // Tab bar
-  CGFloat tabBarY =
-  (_headerView ?
-   CGRectGetMaxY(_headerView.frame) :
-   _containerView.contentInset.top
-   );
+  CGFloat tabBarY = (_headerView ? CGRectGetMaxY(_headerView.frame) - _tabBar.frame.size.height : _containerView.contentInset.top);
   [_tabBar setFrame:(CGRect){
     0.0, tabBarY,
     _tabBar.frame.size
@@ -211,11 +212,7 @@
   [self.view layoutSubviews];
   CGSize size = _containerView.bounds.size;
   
-  CGFloat headerOffset =
-  (_headerView ?
-   _headerView.maximumOfHeight :
-   0.0
-  );
+  CGFloat headerOffset = (_headerView ? _headerView.maximumOfHeight : 0.0f);
   UIEdgeInsets contentInsets = UIEdgeInsetsMake(headerOffset + CGRectGetHeight(_tabBar.bounds), 0.0, _containerView.contentInset.top, 0.0);
   
   // Resize sub view controllers
@@ -387,7 +384,7 @@
 
 #pragma mark - Tab bar delegate
 
-- (BOOL)tabBar:(JKTabBar *)tabBar shouldSelectItem:(UITabBarItem *)item
+- (BOOL)tabBar:(FMTabBar *)tabBar shouldSelectItem:(UITabBarItem *)item
 {
   [self layoutSubViewControllerToSelectedViewController];
   return YES;

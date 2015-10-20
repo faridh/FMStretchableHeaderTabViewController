@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_JKStretchableHeaderTabViewController : NSObject
+@interface PodsDummy_Pods_FMStretchableHeaderTabViewController : NSObject
 @end
-@implementation PodsDummy_Pods_JKStretchableHeaderTabViewController
+@implementation PodsDummy_Pods_FMStretchableHeaderTabViewController
 @end

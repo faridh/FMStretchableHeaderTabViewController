@@ -583,6 +583,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StretchableHeaderTabViewExample/StretchableHeaderTabViewExample-Prefix.pch";
 				INFOPLIST_FILE = "StretchableHeaderTabViewExample/StretchableHeaderTabViewExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faridh.StretchableHeaderTabViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -597,6 +599,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StretchableHeaderTabViewExample/StretchableHeaderTabViewExample-Prefix.pch";
 				INFOPLIST_FILE = "StretchableHeaderTabViewExample/StretchableHeaderTabViewExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faridh.StretchableHeaderTabViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

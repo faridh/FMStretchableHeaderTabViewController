@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A2DC24E195B5BCB00A96937 /* JKStretchableHeaderTab.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2DC24D195B5BCB00A96937 /* JKStretchableHeaderTab.h */; };
-		0B26D22BE4CE4793870DAAF3 /* JKStretchableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4DACE360514ED18BB5BD31 /* JKStretchableHeaderView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		0A2DC24E195B5BCB00A96937 /* FMStretchableHeaderTab.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2DC24D195B5BCB00A96937 /* FMStretchableHeaderTab.h */; };
+		0B26D22BE4CE4793870DAAF3 /* FMStretchableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4DACE360514ED18BB5BD31 /* FMStretchableHeaderView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		0CC900AF010E4413A9A0291A /* Pods-JKStretchableHeaderTabViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C79C5A23A7440DF843F419B /* Pods-JKStretchableHeaderTabViewController-dummy.m */; };
 		25262035509449EF9F9502B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8A198753C5453790E253C6 /* Foundation.framework */; };
-		526CFFF138964D75A3FBAFAD /* JKTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FABFB54952A44A487B6E14C /* JKTabViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		526CFFF138964D75A3FBAFAD /* FMTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FABFB54952A44A487B6E14C /* FMTabViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		5D25BED1B11B4F5DAD88CB66 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FAD9E93D6AA486F9AD62622 /* UIKit.framework */; };
-		5FE32C140B6141628A17A5A6 /* JKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F217095C2B448BC8B898028 /* JKTabBar.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		6B1F2A99F91C4D15B7EFA494 /* JKStretchableHeaderTabViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E5495184E9944C0BAE7CA8A /* JKStretchableHeaderTabViewController.h */; };
-		7AF22160DEB34A7FA290A6B5 /* JKTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = CFB070B54BBE49578C25893B /* JKTabBar.h */; };
-		924693CB38EA480C9B321165 /* JKTabBarItemButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 13DD738966034977AB9ACD38 /* JKTabBarItemButton.h */; };
+		5FE32C140B6141628A17A5A6 /* FMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F217095C2B448BC8B898028 /* FMTabBar.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		6B1F2A99F91C4D15B7EFA494 /* FMStretchableHeaderTabViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E5495184E9944C0BAE7CA8A /* FMStretchableHeaderTabViewController.h */; };
+		7AF22160DEB34A7FA290A6B5 /* FMTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = CFB070B54BBE49578C25893B /* FMTabBar.h */; };
+		924693CB38EA480C9B321165 /* FMTabBarItemButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 13DD738966034977AB9ACD38 /* FMTabBarItemButton.h */; };
 		92AE171FDF774047816DEF1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8A198753C5453790E253C6 /* Foundation.framework */; };
-		C4763F45BBD34FE6B9025D12 /* JKTabBarItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D34844AD7DA4DF3BD85C72A /* JKTabBarItemButton.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		C4763F45BBD34FE6B9025D12 /* FMTabBarItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D34844AD7DA4DF3BD85C72A /* FMTabBarItemButton.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		CAC25C2A0C4D4EE9845B1709 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D117A149D5D14FAD93DD7C9A /* CoreGraphics.framework */; };
-		DF242AD1F1EE4C6EA0D7586D /* JKStretchableHeaderTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5424F595F4F747049216DD63 /* JKStretchableHeaderTabViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		E0AFA4D2146841F1AAF7A189 /* JKStretchableHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = C1F1A6CE1C1A43EEA95464FC /* JKStretchableHeaderView.h */; };
+		DF242AD1F1EE4C6EA0D7586D /* FMStretchableHeaderTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5424F595F4F747049216DD63 /* FMStretchableHeaderTabViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		E0AFA4D2146841F1AAF7A189 /* FMStretchableHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = C1F1A6CE1C1A43EEA95464FC /* FMStretchableHeaderView.h */; };
 		EEF8E703351C4F229D5DFB62 /* libPods-JKStretchableHeaderTabViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 148E6A312D794A669CEFC1EE /* libPods-JKStretchableHeaderTabViewController.a */; };
 		F11679DA009646098E78B874 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5D1A42DD5841B58AAE11F8 /* Pods-dummy.m */; };
-		F757FB3C4D364DAE949BE88B /* JKTabViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 033EF11362B549068077A0D6 /* JKTabViewController.h */; };
+		F757FB3C4D364DAE949BE88B /* FMTabViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 033EF11362B549068077A0D6 /* FMTabViewController.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,31 +38,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		033EF11362B549068077A0D6 /* JKTabViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JKTabViewController.h; path = Classes/JKTabViewController.h; sourceTree = "<group>"; };
-		0A2DC24D195B5BCB00A96937 /* JKStretchableHeaderTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JKStretchableHeaderTab.h; path = Classes/JKStretchableHeaderTab.h; sourceTree = "<group>"; };
+		033EF11362B549068077A0D6 /* FMTabViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMTabViewController.h; path = Classes/FMTabViewController.h; sourceTree = "<group>"; };
+		0A2DC24D195B5BCB00A96937 /* FMStretchableHeaderTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMStretchableHeaderTab.h; path = Classes/FMStretchableHeaderTab.h; sourceTree = "<group>"; };
 		0C79C5A23A7440DF843F419B /* Pods-JKStretchableHeaderTabViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JKStretchableHeaderTabViewController-dummy.m"; sourceTree = "<group>"; };
 		11BCF8BEDB7A4AD49713EEBF /* Pods-JKStretchableHeaderTabViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JKStretchableHeaderTabViewController-prefix.pch"; sourceTree = "<group>"; };
-		13DD738966034977AB9ACD38 /* JKTabBarItemButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JKTabBarItemButton.h; path = Classes/JKTabBarItemButton.h; sourceTree = "<group>"; };
+		13DD738966034977AB9ACD38 /* FMTabBarItemButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMTabBarItemButton.h; path = Classes/FMTabBarItemButton.h; sourceTree = "<group>"; };
 		142F9D84C26F41BCBB0CAE0C /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		148E6A312D794A669CEFC1EE /* libPods-JKStretchableHeaderTabViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JKStretchableHeaderTabViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D8F5745F4484EFCBEE005F3 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		2F217095C2B448BC8B898028 /* JKTabBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JKTabBar.m; path = Classes/JKTabBar.m; sourceTree = "<group>"; };
-		2F4DACE360514ED18BB5BD31 /* JKStretchableHeaderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JKStretchableHeaderView.m; path = Classes/JKStretchableHeaderView.m; sourceTree = "<group>"; };
+		2F217095C2B448BC8B898028 /* FMTabBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMTabBar.m; path = Classes/FMTabBar.m; sourceTree = "<group>"; };
+		2F4DACE360514ED18BB5BD31 /* FMStretchableHeaderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMStretchableHeaderView.m; path = Classes/FMStretchableHeaderView.m; sourceTree = "<group>"; };
 		2FAD9E93D6AA486F9AD62622 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		3BB39BA007224522A439CE35 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5424F595F4F747049216DD63 /* JKStretchableHeaderTabViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JKStretchableHeaderTabViewController.m; path = Classes/JKStretchableHeaderTabViewController.m; sourceTree = "<group>"; };
+		5424F595F4F747049216DD63 /* FMStretchableHeaderTabViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMStretchableHeaderTabViewController.m; path = Classes/FMStretchableHeaderTabViewController.m; sourceTree = "<group>"; };
 		553D7D71D4834333BA7737C4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.xcconfig; sourceTree = "<group>"; };
 		598C3FEC83874CE89E8356BC /* JKStretchableHeaderTabViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = JKStretchableHeaderTabViewController.xib; path = Classes/JKStretchableHeaderTabViewController.xib; sourceTree = "<group>"; };
-		5D34844AD7DA4DF3BD85C72A /* JKTabBarItemButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JKTabBarItemButton.m; path = Classes/JKTabBarItemButton.m; sourceTree = "<group>"; };
-		5FABFB54952A44A487B6E14C /* JKTabViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JKTabViewController.m; path = Classes/JKTabViewController.m; sourceTree = "<group>"; };
-		6E5495184E9944C0BAE7CA8A /* JKStretchableHeaderTabViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JKStretchableHeaderTabViewController.h; path = Classes/JKStretchableHeaderTabViewController.h; sourceTree = "<group>"; };
+		5D34844AD7DA4DF3BD85C72A /* FMTabBarItemButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMTabBarItemButton.m; path = Classes/FMTabBarItemButton.m; sourceTree = "<group>"; };
+		5FABFB54952A44A487B6E14C /* FMTabViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMTabViewController.m; path = Classes/FMTabViewController.m; sourceTree = "<group>"; };
+		6E5495184E9944C0BAE7CA8A /* FMStretchableHeaderTabViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMStretchableHeaderTabViewController.h; path = Classes/FMStretchableHeaderTabViewController.h; sourceTree = "<group>"; };
 		9B8A198753C5453790E253C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		A8004FF7A61F4E97BEC3E9D0 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A945A66CFF854C77A12332FB /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		C1F1A6CE1C1A43EEA95464FC /* JKStretchableHeaderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JKStretchableHeaderView.h; path = Classes/JKStretchableHeaderView.h; sourceTree = "<group>"; };
+		C1F1A6CE1C1A43EEA95464FC /* FMStretchableHeaderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMStretchableHeaderView.h; path = Classes/FMStretchableHeaderView.h; sourceTree = "<group>"; };
 		C962C8BA15C3412AAEC04C83 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
 		CC5D1A42DD5841B58AAE11F8 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		CFB070B54BBE49578C25893B /* JKTabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JKTabBar.h; path = Classes/JKTabBar.h; sourceTree = "<group>"; };
+		CFB070B54BBE49578C25893B /* FMTabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMTabBar.h; path = Classes/FMTabBar.h; sourceTree = "<group>"; };
 		D117A149D5D14FAD93DD7C9A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		D6E7D5B58D9F46C0B68E0185 /* Pods-JKStretchableHeaderTabViewController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JKStretchableHeaderTabViewController-Private.xcconfig"; sourceTree = "<group>"; };
 		F89304E695094471B4DC2E41 /* Pods-JKStretchableHeaderTabViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JKStretchableHeaderTabViewController.xcconfig"; sourceTree = "<group>"; };
@@ -119,17 +119,17 @@
 		700265C7A53C4643B69578B7 /* JKStretchableHeaderTabViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0A2DC24D195B5BCB00A96937 /* JKStretchableHeaderTab.h */,
-				6E5495184E9944C0BAE7CA8A /* JKStretchableHeaderTabViewController.h */,
-				5424F595F4F747049216DD63 /* JKStretchableHeaderTabViewController.m */,
-				C1F1A6CE1C1A43EEA95464FC /* JKStretchableHeaderView.h */,
-				2F4DACE360514ED18BB5BD31 /* JKStretchableHeaderView.m */,
-				CFB070B54BBE49578C25893B /* JKTabBar.h */,
-				2F217095C2B448BC8B898028 /* JKTabBar.m */,
-				13DD738966034977AB9ACD38 /* JKTabBarItemButton.h */,
-				5D34844AD7DA4DF3BD85C72A /* JKTabBarItemButton.m */,
-				033EF11362B549068077A0D6 /* JKTabViewController.h */,
-				5FABFB54952A44A487B6E14C /* JKTabViewController.m */,
+				0A2DC24D195B5BCB00A96937 /* FMStretchableHeaderTab.h */,
+				6E5495184E9944C0BAE7CA8A /* FMStretchableHeaderTabViewController.h */,
+				5424F595F4F747049216DD63 /* FMStretchableHeaderTabViewController.m */,
+				C1F1A6CE1C1A43EEA95464FC /* FMStretchableHeaderView.h */,
+				2F4DACE360514ED18BB5BD31 /* FMStretchableHeaderView.m */,
+				CFB070B54BBE49578C25893B /* FMTabBar.h */,
+				2F217095C2B448BC8B898028 /* FMTabBar.m */,
+				13DD738966034977AB9ACD38 /* FMTabBarItemButton.h */,
+				5D34844AD7DA4DF3BD85C72A /* FMTabBarItemButton.m */,
+				033EF11362B549068077A0D6 /* FMTabViewController.h */,
+				5FABFB54952A44A487B6E14C /* FMTabViewController.m */,
 				0F8CA34A13F14080A1CF11A2 /* Resources */,
 				83477BABD5A84A1F853EC2A7 /* Support Files */,
 			);
@@ -205,12 +205,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B1F2A99F91C4D15B7EFA494 /* JKStretchableHeaderTabViewController.h in Headers */,
-				E0AFA4D2146841F1AAF7A189 /* JKStretchableHeaderView.h in Headers */,
-				0A2DC24E195B5BCB00A96937 /* JKStretchableHeaderTab.h in Headers */,
-				7AF22160DEB34A7FA290A6B5 /* JKTabBar.h in Headers */,
-				924693CB38EA480C9B321165 /* JKTabBarItemButton.h in Headers */,
-				F757FB3C4D364DAE949BE88B /* JKTabViewController.h in Headers */,
+				6B1F2A99F91C4D15B7EFA494 /* FMStretchableHeaderTabViewController.h in Headers */,
+				E0AFA4D2146841F1AAF7A189 /* FMStretchableHeaderView.h in Headers */,
+				0A2DC24E195B5BCB00A96937 /* FMStretchableHeaderTab.h in Headers */,
+				7AF22160DEB34A7FA290A6B5 /* FMTabBar.h in Headers */,
+				924693CB38EA480C9B321165 /* FMTabBarItemButton.h in Headers */,
+				F757FB3C4D364DAE949BE88B /* FMTabViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,11 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF242AD1F1EE4C6EA0D7586D /* JKStretchableHeaderTabViewController.m in Sources */,
-				0B26D22BE4CE4793870DAAF3 /* JKStretchableHeaderView.m in Sources */,
-				5FE32C140B6141628A17A5A6 /* JKTabBar.m in Sources */,
-				C4763F45BBD34FE6B9025D12 /* JKTabBarItemButton.m in Sources */,
-				526CFFF138964D75A3FBAFAD /* JKTabViewController.m in Sources */,
+				DF242AD1F1EE4C6EA0D7586D /* FMStretchableHeaderTabViewController.m in Sources */,
+				0B26D22BE4CE4793870DAAF3 /* FMStretchableHeaderView.m in Sources */,
+				5FE32C140B6141628A17A5A6 /* FMTabBar.m in Sources */,
+				C4763F45BBD34FE6B9025D12 /* FMTabBarItemButton.m in Sources */,
+				526CFFF138964D75A3FBAFAD /* FMTabViewController.m in Sources */,
 				0CC900AF010E4413A9A0291A /* Pods-JKStretchableHeaderTabViewController-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

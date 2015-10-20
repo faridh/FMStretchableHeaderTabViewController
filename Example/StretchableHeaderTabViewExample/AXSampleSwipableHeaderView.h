@@ -3,9 +3,9 @@
 //  StretchableHeaderTabViewExample
 //
 
-#import "JKStretchableHeaderView.h"
+#import "FMStretchableHeaderView.h"
 
-@interface AXSampleSwipableHeaderView : JKStretchableHeaderView <JKStretchableHeaderViewDelegate>
+@interface AXSampleSwipableHeaderView : FMStretchableHeaderView <FMStretchableHeaderViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;

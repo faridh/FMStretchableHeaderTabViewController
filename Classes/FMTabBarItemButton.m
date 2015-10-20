@@ -1,18 +1,18 @@
 //
-//  JKTabBarItemButton.m
+//  FMTabBarItemButton.m
 //  Pods
 //
 
-#import "JKTabBarItemButton.h"
+#import "FMTabBarItemButton.h"
 
-@interface JKTabBarItemButton() {
+@interface FMTabBarItemButton() {
     CALayer *_leftSideSeparator;
     CALayer *_rightSideSeparator;
 }
 
 @end
 
-@implementation JKTabBarItemButton
+@implementation FMTabBarItemButton
 
 - (id)initWithFrame:(CGRect)frame
 {

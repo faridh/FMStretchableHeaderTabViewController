@@ -1,5 +1,5 @@
-#include "Pods-JKStretchableHeaderTabViewController.xcconfig"
+#include "Pods-FMStretchableHeaderTabViewController.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/JKStretchableHeaderTabViewController" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/JKStretchableHeaderTabViewController"
-OTHER_LDFLAGS = -ObjC ${PODS_JKSTRETCHABLEHEADERTABVIEWCONTROLLER_OTHER_LDFLAGS}
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/FMStretchableHeaderTabViewController" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/FMStretchableHeaderTabViewController"
+OTHER_LDFLAGS = -ObjC ${PODS_FMSTRETCHABLEHEADERTABVIEWCONTROLLER_OTHER_LDFLAGS}
 PODS_ROOT = ${SRCROOT}
