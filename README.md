@@ -1,4 +1,4 @@
-# JKStretchableHeaderTabViewController
+# FMStretchableHeaderTabViewController
 
 [![Version](https://img.shields.io/cocoapods/v/AXStretchableHeaderTabViewController.svg?style=flat)](http://cocoadocs.org/docsets/AXStretchableHeaderTabViewController)
 [![License](https://img.shields.io/cocoapods/l/AXStretchableHeaderTabViewController.svg?style=flat)](http://cocoadocs.org/docsets/AXStretchableHeaderTabViewController)
@@ -22,14 +22,16 @@ To run the example project; clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-AXStretchableHeaderTabViewController is available through [CocoaPods](http://cocoapods.org). To install
+FMStretchableHeaderTabViewController is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-    pod "AXStretchableHeaderTabViewController"
+    pod "FMStretchableHeaderTabViewController"
 
 ## Author
 
-Forked by: Joel Koroniak
+Forked by: Faridh Mendoza
+
+
 Original by: Hiroki Akiyama, aki-hiroki@nifty.com
 
 ## License
