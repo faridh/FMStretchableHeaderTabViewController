@@ -219,7 +219,7 @@
   [_viewControllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
     if ([obj isKindOfClass:[UIViewController class]]) {
       UIViewController *viewController = obj;
-      CGRect newFrame = (CGRect){size.width * idx, 0.0, size};
+      CGRect newFrame = (CGRect){size.width * idx, -40.0f, size};
       if ([viewController.view isKindOfClass:[UIScrollView class]]) {
         UIScrollView *scrollView = (id)viewController.view;
         [scrollView setFrame:newFrame];

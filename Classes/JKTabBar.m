@@ -33,6 +33,7 @@
       _toolbar.barTintColor = [UIColor colorWithWhite:1.0f alpha:0.0f];
       for (__strong UIView *tempView in _toolbar.subviews) {
           tempView.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.0f];
+          
       }
     [self addSubview:_toolbar];
     
@@ -131,6 +132,9 @@
           [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
           [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
           [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+          [button setTitleShadowColor:[UIColor colorWithWhite:0.0f alpha:0.2f] forState:UIControlStateNormal];
+          button.titleLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.2f];
+          button.titleLabel.shadowOffset = CGSizeMake(-1, 1);
           button.backgroundColor = [UIColor clearColor];
           [_containerView addSubview:button];
           [buttons addObject:button];
@@ -140,6 +144,9 @@
           [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
           [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
           [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+          [button setTitleShadowColor:[UIColor colorWithWhite:0.0f alpha:0.2f] forState:UIControlStateNormal];
+          button.titleLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.2f];
+          button.titleLabel.shadowOffset = CGSizeMake(-1, 1);
           button.backgroundColor = [UIColor clearColor];
           [_containerView addSubview:button];
           [buttons addObject:button];
