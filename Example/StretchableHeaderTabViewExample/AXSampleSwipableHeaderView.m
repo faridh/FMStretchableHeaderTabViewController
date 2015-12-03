@@ -20,7 +20,7 @@
   return self;
 }
 
-- (NSArray *)interactiveSubviewsInStretchableHeaderView:(JKStretchableHeaderView *)stretchableHeaderView
+- (NSArray *)interactiveSubviewsInStretchableHeaderView:(FMStretchableHeaderView *)stretchableHeaderView
 {
   return _interactiveSubviews;
 }

@@ -1,14 +1,14 @@
 PODS:
-  - JKStretchableHeaderTabViewController (0.1.9)
+  - FMStretchableHeaderTabViewController (0.0.3)
 
 DEPENDENCIES:
-  - JKStretchableHeaderTabViewController (from `../`)
+  - FMStretchableHeaderTabViewController (from `../`)
 
 EXTERNAL SOURCES:
-  JKStretchableHeaderTabViewController:
+  FMStretchableHeaderTabViewController:
     :path: ../
 
 SPEC CHECKSUMS:
-  JKStretchableHeaderTabViewController: cf83b38a7536f82341db0fa7d1a2a556b5ca4e33
+  FMStretchableHeaderTabViewController: 1de67c96c4f2b9422d310d7a73f984e835b9ef19
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.39.0

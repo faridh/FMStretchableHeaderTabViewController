@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JKStretchableHeaderTabViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FMStretchableHeaderTabViewController">
             <connections>
                 <outlet property="containerView" destination="fuc-l1-jWd" id="5JX-fC-p4D"/>
                 <outlet property="view" destination="YMh-Kr-uaY" id="zJh-Yk-aW8"/>

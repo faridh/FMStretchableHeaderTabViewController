@@ -1,18 +1,18 @@
 //
-//  JKTabViewController.m
+//  FMTabViewController.m
 //  StretchableHeaderTabViewExample
 //
 //  Created by Joel Koroniak on 2014-06-20.
 //  Copyright (c) 2014 Hiroki Akiyama. All rights reserved.
 //
 
-#import "JKTabViewController.h"
+#import "FMTabViewController.h"
 
-@interface JKTabViewController ()
+@interface FMTabViewController ()
 
 @end
 
-@implementation JKTabViewController
+@implementation FMTabViewController
 
 - (UIScrollView*) scrollableComponentView
 {

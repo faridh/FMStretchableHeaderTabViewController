@@ -1,24 +1,24 @@
 //
-//  JKTabBar.m
+//  FMTabBar.m
 //  Pods
 //
 
-#import "JKTabBar.h"
-#import "JKTabBarItemButton.h"
+#import "FMTabBar.h"
+#import "FMTabBarItemButton.h"
 
 #define MIN_TAB_BUTTON_WIDTH 140
 
-@interface JKTabBar ()
+@interface FMTabBar ()
 @property (readonly, nonatomic) UIScrollView *containerView;
 @property (readonly, nonatomic) UIToolbar *toolbar;
 @property (copy, nonatomic) NSArray *tabBarItemButtons;
 @end
 
-@implementation JKTabBar {
+@implementation FMTabBar {
   NSArray *_items;
   CALayer *_bottomSeparator;
   CALayer *_indicatorLayer;
-  JKTabBarStyle _tabBarStyle;
+  FMTabBarStyle _tabBarStyle;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -66,29 +66,29 @@
   if (_tabBarItemButtons.count > 0) {
     CGSize buttonSize = (CGSize){MAX( MIN_TAB_BUTTON_WIDTH, CGRectGetWidth(self.bounds)/ _tabBarItemButtons.count), CGRectGetHeight(self.bounds)};
     switch (_tabBarStyle) {
-      case JKTabBarStyleDefault: {
+      case FMTabBarStyleDefault: {
         [_tabBarItemButtons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
           [button setFrame:(CGRect){buttonSize.width * idx, 0.0, buttonSize}];
-            [(JKTabBarItemButton*)button setSeparatorColor:self.barItemButtonSeparatorColor];
-            [(JKTabBarItemButton*)button setShowsRightSideSeparator:NO];
+            [(FMTabBarItemButton*)button setSeparatorColor:self.barItemButtonSeparatorColor];
+            [(FMTabBarItemButton*)button setShowsRightSideSeparator:NO];
             if (idx == 0) {
-                [(JKTabBarItemButton*)button setShowsLeftSideSeparator:NO];
+                [(FMTabBarItemButton*)button setShowsLeftSideSeparator:NO];
             }
         }];
         [_containerView setContentSize:CGSizeMake(buttonSize.width * _tabBarItemButtons.count, buttonSize.height)];
         break;
       }
-      case JKTabBarStyleVariableWidthButton: {
+      case FMTabBarStyleVariableWidthButton: {
         __block CGFloat x = 8.0;
         [_tabBarItemButtons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
           [button sizeToFit];
           CGFloat buttonWidth = CGRectGetWidth(button.bounds);
           [button setFrame:(CGRect){x, 0.0, buttonWidth, buttonSize.height}];
           x += buttonWidth;
-            [(JKTabBarItemButton*)button setSeparatorColor:self.barItemButtonSeparatorColor];
-            [(JKTabBarItemButton*)button setShowsRightSideSeparator:NO];
+            [(FMTabBarItemButton*)button setSeparatorColor:self.barItemButtonSeparatorColor];
+            [(FMTabBarItemButton*)button setShowsRightSideSeparator:NO];
             if (idx == 0) {
-                [(JKTabBarItemButton*)button setShowsLeftSideSeparator:NO];
+                [(FMTabBarItemButton*)button setShowsLeftSideSeparator:NO];
             }
         }];
         [_containerView setContentSize:(CGSize){x, 0.0}];
@@ -121,7 +121,7 @@
     [items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
       if ([obj isKindOfClass:[UITabBarItem class]]) {
           UITabBarItem *item = obj;
-          JKTabBarItemButton *button = [[JKTabBarItemButton alloc] init];
+          FMTabBarItemButton *button = [[FMTabBarItemButton alloc] init];
           [button.titleLabel setFont:_tabBarButtonFont];
           [button setImage:item.image forState:UIControlStateNormal];
           [button setTitle:item.title forState:UIControlStateNormal];
@@ -138,8 +138,8 @@
           button.backgroundColor = [UIColor clearColor];
           [_containerView addSubview:button];
           [buttons addObject:button];
-      } else if ([obj isKindOfClass:[JKTabBarItemButton class]]) {
-          JKTabBarItemButton *button = (JKTabBarItemButton*)obj;
+      } else if ([obj isKindOfClass:[FMTabBarItemButton class]]) {
+          FMTabBarItemButton *button = (FMTabBarItemButton*)obj;
           [button addTarget:self action:@selector(touchesButton:) forControlEvents:UIControlEventTouchDown];
           [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
           [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
@@ -176,7 +176,7 @@
       [_tabBarItemButtons[beforeIndex] setSelected:NO];
     }
     if (afterIndex != NSNotFound) {
-      JKTabBarItemButton *button = _tabBarItemButtons[afterIndex];
+      FMTabBarItemButton *button = _tabBarItemButtons[afterIndex];
       _selectedItem = selectedItem;
       [button setSelected:YES];
       
@@ -211,7 +211,7 @@
   [CATransaction commit];
 }
 
-- (void)setTabBarStyle:(JKTabBarStyle)tabBarStyle
+- (void)setTabBarStyle:(FMTabBarStyle)tabBarStyle
 {
   if (_tabBarStyle != tabBarStyle) {
     _tabBarStyle = tabBarStyle;
