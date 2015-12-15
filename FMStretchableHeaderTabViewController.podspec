@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "FMStretchableHeaderTabViewController"
-  s.version          = "0.0.3"
+  s.version          = "0.0.5"
   s.summary          = "Stretchable header view + Horizontal swipable tab view with support for several tabs."
   s.description      = <<-DESC
                        Stretchable header view + Horizontal swipable tab view
