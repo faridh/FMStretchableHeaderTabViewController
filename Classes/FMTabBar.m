@@ -135,7 +135,7 @@
           [button setTitleShadowColor:[UIColor colorWithWhite:0.0f alpha:0.8f]
                              forState:UIControlStateNormal];
           button.titleLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.8f];
-          button.titleLabel.shadowOffset = CGSizeMake(-2, 2);
+          button.titleLabel.shadowOffset = CGSizeMake(-1, 1);
           button.backgroundColor = [UIColor clearColor];
           [_containerView addSubview:button];
           [buttons addObject:button];
@@ -148,7 +148,7 @@
           [button setTitleShadowColor:[UIColor colorWithWhite:0.0f alpha:0.8f]
                              forState:UIControlStateNormal];
           button.titleLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.8f];
-          button.titleLabel.shadowOffset = CGSizeMake(-2, 2);
+          button.titleLabel.shadowOffset = CGSizeMake(-1, 1);
           button.backgroundColor = [UIColor clearColor];
           [_containerView addSubview:button];
           [buttons addObject:button];
@@ -207,8 +207,8 @@
     width, 2.0
   }];
   [_indicatorLayer setFrame:(CGRect){
-    CGRectGetMinX(button.frame) + 10.0, height - 10.0,
-    CGRectGetWidth(button.frame) - 20.0, 3.0
+    CGRectGetMinX(button.frame) + 10.0, height - 5.0f,
+    CGRectGetWidth(button.frame) - 20.0, 2.0f
   }];
   [CATransaction commit];
 }
