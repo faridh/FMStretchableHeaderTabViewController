@@ -132,9 +132,10 @@
           [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
           [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
           [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-          [button setTitleShadowColor:[UIColor colorWithWhite:0.0f alpha:0.2f] forState:UIControlStateNormal];
-          button.titleLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.2f];
-          button.titleLabel.shadowOffset = CGSizeMake(-1, 1);
+          [button setTitleShadowColor:[UIColor colorWithWhite:0.0f alpha:0.8f]
+                             forState:UIControlStateNormal];
+          button.titleLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.8f];
+          button.titleLabel.shadowOffset = CGSizeMake(-2, 2);
           button.backgroundColor = [UIColor clearColor];
           [_containerView addSubview:button];
           [buttons addObject:button];
@@ -144,9 +145,10 @@
           [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
           [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
           [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-          [button setTitleShadowColor:[UIColor colorWithWhite:0.0f alpha:0.2f] forState:UIControlStateNormal];
-          button.titleLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.2f];
-          button.titleLabel.shadowOffset = CGSizeMake(-1, 1);
+          [button setTitleShadowColor:[UIColor colorWithWhite:0.0f alpha:0.8f]
+                             forState:UIControlStateNormal];
+          button.titleLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.8f];
+          button.titleLabel.shadowOffset = CGSizeMake(-2, 2);
           button.backgroundColor = [UIColor clearColor];
           [_containerView addSubview:button];
           [buttons addObject:button];
