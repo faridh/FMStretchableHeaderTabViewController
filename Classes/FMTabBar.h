@@ -20,11 +20,19 @@ typedef enum : NSUInteger {
 
 @interface FMTabBar : UIView
 @property (copy, nonatomic) NSArray *items;
+@property (nonatomic, strong) NSArray *buttons;
 @property (assign, nonatomic) UITabBarItem *selectedItem;
 @property (assign, nonatomic) id<FMTabBarDelegate> delegate;
+
 @property (strong, nonatomic) UIFont *tabBarButtonFont;
+
 @property (nonatomic, strong) UIColor *barItemButtonSeparatorColor;
+@property (nonatomic, strong) UIColor *buttonMainColor;
+@property (nonatomic, strong) UIColor *buttonSecondaryColor;
+@property (nonatomic, strong) UIColor *indicatorColor;
+@property (nonatomic, strong) UIColor *bottomLayerColor;
 
 // TODO: implement this style option.
 //@property (nonatomic) FMTabBarStyle tabBarStyle;
+
 @end
