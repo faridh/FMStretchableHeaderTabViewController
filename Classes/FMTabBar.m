@@ -96,7 +96,9 @@
         break;
       }
     }
-    [self layoutIndicatorLayerWithButton:[_tabBarItemButtons objectAtIndex:[_items indexOfObject:_selectedItem]]];
+      [self layoutIndicatorLayerWithButton:[_tabBarItemButtons objectAtIndex:[_items indexOfObject:_selectedItem]]];
+      [_indicatorLayer setBackgroundColor:_indicatorColor.CGColor];
+      [_bottomSeparator setBackgroundColor:_bottomLayerColor.CGColor];
   }
 }
 
